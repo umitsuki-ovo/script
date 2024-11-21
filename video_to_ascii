@@ -44,8 +44,12 @@ def image_to_ascii(img):
     write_data(ascii_image)
 
 def load_video(video_path):
+    # open video file
     cap = cv2.VideoCapture(video_path)
     
+    # write video fps
+    write_data(cap.get(cv2.CAP_PROP_FPS))
+
     while True:
         # load video frame
         ret, frame = cap.read()
