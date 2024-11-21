@@ -48,7 +48,7 @@ def load_video(video_path):
     cap = cv2.VideoCapture(video_path)
     
     # write video fps
-    write_data(cap.get(cv2.CAP_PROP_FPS))
+    write_data(str(cap.get(cv2.CAP_PROP_FPS)))
 
     while True:
         # load video frame
