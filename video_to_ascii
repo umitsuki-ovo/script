@@ -1,6 +1,3 @@
-# reference
-# https://github.com/anuragrana/Python-Scripts/blob/master/image_to_ascii.py
-
 import cv2
 import sys
 from PIL import Image
@@ -29,7 +26,7 @@ def image_to_ascii(img):
     pixels = img.getdata()
 
     # replace each pixel with a character from array
-    chars = ["B","S","#","&","@","$","%","*","!",":","."]
+    chars = [".",":","!","*","%","$","@","&","#","S","B"]
     new_pixels = [chars[pixel//25] for pixel in pixels]
     new_pixels = ''.join(new_pixels)
 
