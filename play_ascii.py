@@ -3,7 +3,7 @@ import sys
 import time
 
 ascii_path = sys.argv[1]
-adjust = 1.14
+adjust = 1.14 # Modify this variable to fit your environment as necessary.
 
 def load_ascii(ascii_path):
     with open(ascii_path, 'r') as file:
