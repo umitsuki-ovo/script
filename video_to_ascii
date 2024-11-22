@@ -1,6 +1,7 @@
 import cv2
 import sys
 from PIL import Image
+import tqdm
 
 video_path = sys.argv[1]
 ascii_image = []
@@ -47,7 +48,8 @@ def load_video(video_path):
     # write video fps
     write_data(str(cap.get(cv2.CAP_PROP_FPS)))
 
-    while True:
+    total_frame = cap.get(cv2.CAP_PROP_FRAME_COUNT)
+    for _ in tqdm.tqdm(range(int(float(total_frame)))):
         # load video frame
         ret, frame = cap.read()
     
@@ -62,5 +64,6 @@ def load_video(video_path):
         image_to_ascii(frame_pil)
     
     cap.release()
+    print('fin.')
 
 load_video(video_path)
