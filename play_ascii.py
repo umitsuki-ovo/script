@@ -20,7 +20,6 @@ def play_animation(data, fps):
         time.sleep(delay)
 
 def main():
-    os.system('cls')
     print('loading...')
     data = load_ascii(ascii_path)
     fps = int(float(data.pop(0)))
