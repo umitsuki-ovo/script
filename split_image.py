@@ -4,7 +4,7 @@ import os
 
 def split(image_path, size):
     image = Image.open(image_path)
-    dpi = image.info.get('dpi', (72, 72))
+    dpi = image.info.get('dpi', (200, 200))
     dpi_x, dpi_y = dpi
 
     paper_sizes = {
