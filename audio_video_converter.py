@@ -2,8 +2,8 @@ import ffmpeg
 import sys
 import os
 
-video_ext = ['mp4', 'avi', 'mov', 'mkv']
-audio_ext = ['mp3', 'aac', 'wav', 'flac']
+video_ext = ['mp4', 'avi', 'mov', 'mkv', 'flv', 'webm', 'wmv', 'mpeg', 'mpg']
+audio_ext = ['mp3', 'aac', 'wav', 'flac', 'ogg', 'm4a', 'wma', 'aiff', 'opus']
 
 def convert_video(file, ext):
     output_file = os.path.splitext(file)[0] + '.' + ext
