@@ -2,6 +2,8 @@ from PIL import Image
 from tqdm import tqdm
 import os
 
+Image.MAX_IMAGE_PIXELS = None
+
 def split(image_path, size):
     image = Image.open(image_path)
     dpi = image.info.get('dpi', (200, 200))
