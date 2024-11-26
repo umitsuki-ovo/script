@@ -3,7 +3,7 @@ import sys
 from PIL import Image
 import tqdm
 
-video_path = input()
+video_path = sys.argv[1]
 ascii_image = []
 
 def write_data(ascii_data):
