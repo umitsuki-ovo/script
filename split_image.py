@@ -34,7 +34,7 @@ def split(image_path, size):
             progress_bar.update(1)
     print(f"The image has been divided into {splits_height} rows and {splits_width} columns and {total_splits} photos.")
 
-image_path = input()
-size = input()
+image_path = sys.argv[1]
+size = sys.argv[2]
 
 split(image_path, size)
