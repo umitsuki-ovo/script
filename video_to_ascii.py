@@ -3,7 +3,7 @@ import sys
 from PIL import Image
 import tqdm
 
-video_path = sys.argv[1]
+video_path = input()
 ascii_image = []
 
 def write_data(ascii_data):
@@ -62,8 +62,8 @@ def load_video(video_path):
         frame_pil = Image.fromarray(frame_rgb)
 
         image_to_ascii(frame_pil)
-    
+
+    print('\nfin.')
     cap.release()
-    print('fin.')
 
 load_video(video_path)
