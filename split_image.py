@@ -14,13 +14,11 @@ def split(image_path, size):
         "B5": (182, 257),
     }
 
-    paper_pixels = {key: (int(width / 25.4 * dpi_x), int(height / 25.4 * dpi_y)) for key, (width, height) in paper_sizes.items()}
     width, height = image.size
-    paper_width, paper_height = paper_pixels[size]
-    splits_width = width // paper_width
-    splits_height = height // paper_height
+    paper_width, paper_height = paper_sizes[size]
+    splits_width = width // int(paper_width / 25.4 * dpi_x)
+    splits_height = height // int(paper_height / 25.4 * dpi_y)
 
-    splits = []
     total_splits = splits_height * splits_width
     progress_bar = tqdm(total=total_splits, desc="Processing Splits", unit="split")
 
@@ -32,7 +30,6 @@ def split(image_path, size):
             lower = upper + paper_height
 
             split_image = image.crop((left, upper, right, lower))
-            splits.append(split_image)
             split_image.save(f'{size}_{os.path.splitext(os.path.basename(image_path))[0]}_{i}_{j}{os.path.splitext(image_path)[1].lower()}')
             progress_bar.update(1)
     print(f"The image has been divided into {splits_height} rows and {splits_width} columns and {total_splits} photos.")
